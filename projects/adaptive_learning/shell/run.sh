@@ -10,7 +10,6 @@ declare -A models=(
   ["cvae"]="parlai.agents.adaptive_learning.cvae:AdaCvaeAgent"
   ["transformer"]="parlai.agents.adaptive_learning.transformer:AdaTransformerAgent"
   ["hred"]="parlai.agents.adaptive_learning.dialog_wae:DialogWaeAgent"
-  ["vhred"]="parlai.agents.adaptive_learning.dialog_wae:DialogWaeAgent"
   ["dialogwae"]="parlai.agents.adaptive_learning.dialog_wae:DialogWaeAgent"
 )
 
@@ -44,7 +43,6 @@ declare -A bszs=(
   ["cvae"]=256
   ["transformer"]=128
   ["hred"]=200
-  ["vhred"]=200
   ["dialogwae"]=200
 )
 
@@ -53,7 +51,6 @@ declare -A lrs=(
   ["cvae"]=5e-4
   ["transformer"]=5e-4
   ["hred"]=1
-  ["vhred"]=1
   ["dialogwae"]=1
 )
 
@@ -147,19 +144,13 @@ function train_model() {
   if [[ "${model_name}" == "seq2seq" ]] || [[ "${model_name}" == "cvae" ]]; then
     train_script=train.py
     train_args=${train_args}" --hiddensize ${hiddensize} --numlayers ${numlayers} --rnn_class ${rnn_class}"
-  elif [[ "${model_name}" == "dialogwae" ]] || [[ "${model_name}" == "hred" ]] || [[ "${model_name}" == "vhred" ]]; then
+  elif [[ "${model_name}" == "dialogwae" ]] || [[ "${model_name}" == "hred" ]]; then
     train_script=train_dialog_wae.py
     train_args=${train_args}" --hiddensize ${hiddensize} --numlayers ${numlayers} --rnn_class ${rnn_class}"
     if [[ "${model_name}" == "hred" ]]; then
       train_args=${train_args}" --hred True"
     else
       train_args=${train_args}" --hred False"
-    fi
-
-    if [[ "${model_name}" == "vhred" ]]; then
-      train_args=${train_args}" --vhred True"
-    else
-      train_args=${train_args}" --vhred False"
     fi
 
   elif [[ "${model_name}" == "transformer" ]]; then
