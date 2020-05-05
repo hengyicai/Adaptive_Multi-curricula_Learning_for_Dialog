@@ -11,7 +11,7 @@ Running scripts can be found in `projects/adaptive_learning`.
 ```Tex
 
 @InProceedings{Hengyi_2020_AAAI,
-  author={Hengyi, Cai and Hongshen, Chen and Cheng, Zhang and Yonghao, Song and Xiaofang, Zhao and Yangxi, Li and Dongsheng, Duan and Dawei, Yin},
+  author={Hengyi Cai and Hongshen Chen and Cheng Zhang and Yonghao Song and Xiaofang Zhao and Yangxi Li and Dongsheng Duan and Dawei Yin},
   title={Learning from Easy to Complex: Adaptive Multi-curricula Learning for Neural Dialogue Generation},
   booktitle = {Thirty-Fourth AAAI Conference on Artificial Intelligence (AAAI)},
   year = {2020}
