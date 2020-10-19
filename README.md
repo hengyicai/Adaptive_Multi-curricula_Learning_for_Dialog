@@ -7,6 +7,11 @@ Check `parlai/agents/adaptive_learning` for experimental models implementation.
 RL-based multi-curriculum learning lies in `parlai/tasks/adaptive_learning`.
 Running scripts can be found in `projects/adaptive_learning`.
 
+## Framework Overview
+
+<p align="center">
+<img src="https://github.com/hengyicai/Adaptive_Multi-curricula_Learning_for_Dialog/blob/master/Fig-ModelArch.png" alt="Framework Overview" width="600"/>
+</p>
 
 ## Requirements
 - Python3
